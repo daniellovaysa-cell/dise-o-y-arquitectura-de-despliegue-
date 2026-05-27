@@ -1,0 +1,9 @@
+name: Saludo Automatico
+on:
+  push:
+jobs:
+  saludo:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Mostrar saludo
+  run: echo "Hola clase full stack, GitHub Actions esta funcionando"
