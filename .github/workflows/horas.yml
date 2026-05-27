@@ -5,19 +5,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-      uses: actions/checkout@v4
-    # CI: mostrar la hora en los logs
-    - name: Hora en UTC (CI)
-    run: date -u
-    - name: Hora en Argentina (CI)
-    run: TZ=America/Argentina/Buenos_Aires date
-    # CD: guardar ambas horas en un archivo y entregarlo
-    - name: Crear archivo con horas (CD)
-    run: |
-      echo "Hora UTC: $(date -u)" > horas.txt
-      echo "Hora Argentina: $(TZ=America/Argentina/Buenos_Aires date)" >> horas.txt
-    - name: Guardar artefacto (CD)
-    uses: actions/upload-artifact@v4
-    with:
-      name: horas
-      path: horas.txt
+        uses: actions/checkout@v4
+      # CI: mostrar la hora en los logs
+      - name: Hora en UTC (CI)
+        run: date -u
+      - name: Hora en Argentina (CI)
+        run: TZ=America/Argentina/Buenos_Aires date
+      # CD: guardar ambas horas en un archivo y entregarlo
+      - name: Crear archivo con horas (CD)
+        run: |
+          echo "Hora UTC: $(date -u)" > horas.txt
+          echo "Hora Argentina: $(TZ=America/Argentina/Buenos_Aires date)" >> horas.txt
+      - name: Guardar artefacto (CD)
+        uses: actions/upload-artifact@v4
+        with:
+          name: horas
+          path: horas.txt
