@@ -2,10 +2,10 @@ name: Flujo inicial
 
 on: 
   push: 
-  branches: [ main ] 
+    branches: [ main ] 
 jobs: 
   prueba: 
-  runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest 
     steps: 
-  - name: Mensaje de prueba 
-    run: echo "La carpeta azul se creó y el flujo funciona" 
+      - name: Mensaje de prueba 
+        run: echo "La carpeta azul se creó y el flujo funciona" 
